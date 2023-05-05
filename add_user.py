@@ -1,3 +1,4 @@
+import getpass
 import hashlib
 import sqlite3
 
@@ -16,7 +17,7 @@ if __name__ == "__main__":
         else:
             print("Not a valid username.")
     
-    password = input("Enter a password: ")
+    password = getpass.getpass("Enter a password: ")
     password_hash = hashlib.sha256(bytearray(password, "utf-8")).hexdigest()
 
     cursor.execute(f"INSERT INTO users VALUES ('{username}', '{password_hash}');")
