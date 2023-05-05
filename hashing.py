@@ -2,7 +2,10 @@ import hashlib
 
 credentials = {
     "robert": "password123",
-    "anoosh": "snuffles456"
+    "anoosh": "snuffles456",
+    "maisy": "filmpopcorn",
+    "pete": "papayapizza",
+    "max": "glowtrain"
 }
 
 if __name__ == "__main__":
