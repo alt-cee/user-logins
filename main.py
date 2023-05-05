@@ -1,10 +1,12 @@
 import hashlib
+import yaml
+
+with open('config.yaml', 'r') as file:
+    credentials_list = yaml.safe_load(file)
+    credentials = {pair["username"]: pair["password_hash"] for pair in credentials_list}
+
 
 def is_valid_credentials(username, password):
-    credentials = {
-        "robert": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
-        "anoosh": "3c32608fd9ffd87ae17dbb3a65a509cc8ba5aa395147c99ed20bdba9c434d8c2"
-    }
     if (username in credentials
         and credentials[username] == hashlib.sha256(bytearray(password, "utf-8")).hexdigest()):
         return True
