@@ -19,4 +19,4 @@ if __name__ == "__main__":
             os.remove(db_filename)
             db_connection = sqlite3.connect(db_filename)
             cursor = db_connection.cursor()
-            cursor.execute("CREATE TABLE users(username VARCHAR, password_hash VARCHAR);")
+            cursor.execute("CREATE TABLE users (username VARCHAR, password_hash VARCHAR);")
