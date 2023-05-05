@@ -1,10 +1,14 @@
 import getpass
 import hashlib
 import sqlite3
-
+import yaml
 
 if __name__ == "__main__":
-    db_connection = sqlite3.connect("ppab6.db")
+    with open("db_config.yaml", "r") as file:
+        config = yaml.safe_load(file)
+        db_path = config[0]["db_path"]
+
+    db_connection = sqlite3.connect(db_path)
     cursor = db_connection.cursor()
 
     valid_username = False
