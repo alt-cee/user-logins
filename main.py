@@ -23,4 +23,8 @@ def is_valid_credentials(username, password):
 if __name__=="__main__":
     username = input("Enter your username: ")
     password = getpass.getpass("Enter your password: ")
-    print(is_valid_credentials(username, password))
+    
+    if is_valid_credentials(username, password):
+        print("Welcome, please enter!")
+    else:
+        print("Scram!")
